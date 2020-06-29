@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+}
+body {
+    background-color: #cce6ff;
+}
+</style>
+</head>
+<body>
+<center><h1>My Control Panel</h1></center>
+<div class="btn-group">
+    <a href="file:///Users/hind/.bitnami/stackman/machines/xampp/volumes/root/htdocs/philw/F.html" target="_blank">
+ <center><button style="background-color:white;width: 100px;"> <link href="F.php"/> Forwards</button></center>
+<a href="file:///Users/hind/.bitnami/stackman/machines/xampp/volumes/root/htdocs/philw/L.html" target="_blank">
+ <center><button style="background-color:white;width: 100px;">Left</button>
+<a href="file:///Users/hind/.bitnami/stackman/machines/xampp/volumes/root/htdocs/philw/S.html" target="_blank">
+ <button style="background-color:Red;width: 100px;">STOP</button>
+<a href="file:///Users/hind/.bitnami/stackman/machines/xampp/volumes/root/htdocs/philw/R.html" target="_blank">
+ <button style="background-color:white;width: 100px;">Right</button></center>
+<a href="file:///Users/hind/.bitnami/stackman/machines/xampp/volumes/root/htdocs/philw/B.html" target="_blank">
+ <center><button style="background-color:white;width: 100px;">Backwards</button></center>
+
+</div>
+</body>
+</html>
