@@ -1,0 +1,177 @@
+{
+  "intents": [
+    {
+      "intent": "IOT_Service",
+      "examples": [
+        {
+          "text": "Can you provide more details about IOT services?  Image for post"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Service",
+      "examples": [
+        {
+          "text": "I want to know the services provided by DIGIOTAI solutions."
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "What’s up"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Services",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "    We provide services around:\n\n1) IOT\n\n2) Datascience\n\n3) Blockchain\n\n4) AR-VR-MR\n\n5) Cognitive & AI"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Service",
+      "dialog_node": "node_1_1594770420835",
+      "previous_sibling": "node_4_1594770363933"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_10_1594770465015",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "IOTService",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you, your request has been sent to info@digiotai.com. You will get a reply soon."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#IOT_Service",
+      "dialog_node": "node_10_1594770465015",
+      "previous_sibling": "node_1_1594770420835"
+    },
+    {
+      "type": "standard",
+      "title": "Greet",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello, this is DICE-BOT powered by IBM Watson. Welcome to DIGIOTAI solutions. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greeting",
+      "dialog_node": "node_4_1594770363933",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "DIGIOTAI",
+  "language": "en",
+  "description": ""
+}
